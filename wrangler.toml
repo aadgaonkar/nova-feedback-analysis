@@ -1,0 +1,19 @@
+name = "nova-feedback-analysis"
+main = "src/index.ts"
+compatibility_date = "2024-12-19"
+
+# D1 Database binding
+# Replace YOUR_DATABASE_ID with your actual D1 database ID after creating it
+[[d1_databases]]
+binding = "DB"
+database_name = "feedback-db"
+database_id = "YOUR_DATABASE_ID"
+
+# Workers AI binding
+[ai]
+binding = "AI"
+
+# Environment variables
+[vars]
+MODEL_NAME = "@cf/meta/llama-3.1-8b-instruct"
+# SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"  # Optional

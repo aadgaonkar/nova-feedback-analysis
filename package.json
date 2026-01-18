@@ -1,0 +1,23 @@
+{
+  "name": "nova-feedback-analysis",
+  "version": "1.0.0",
+  "description": "User Feedback Analysis System built on Cloudflare Workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:apply": "wrangler d1 execute DB --file=./schema/d1.sql",
+    "ingest:csv": "tsx scripts/ingest_csv.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["cloudflare", "workers", "feedback", "ai"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "typescript": "^5.6.3",
+    "wrangler": "^4.0.0",
+    "tsx": "^4.19.1"
+  },
+  "dependencies": {}
+}

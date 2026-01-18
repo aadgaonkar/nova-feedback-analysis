@@ -1,0 +1,17 @@
+node_modules/
+.wrangler/
+dist/
+*.log
+.DS_Store
+.env
+.env.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

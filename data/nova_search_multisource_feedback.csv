@@ -1,0 +1,81 @@
+product,feedback_id,source,timestamp,user_segment,region,area,text,sentiment_label,urgency_hint,rating
+NovaSearch,fb_0025,twitter,2025-12-19T19:52:00Z,pro,EU,privacy_security,Need an option to delete my data permanently.,negative,4,
+NovaSearch,fb_0053,discord,2025-12-20T12:42:00Z,enterprise,NA,ui_ux,The UI looks clean and modern — great job.,positive,1,
+NovaSearch,fb_0046,in_app_form,2025-12-20T18:55:00Z,free_tier,NA,account_login,2FA codes don’t get delivered sometimes.,negative,4,
+NovaSearch,fb_0066,support_ticket,2025-12-21T04:30:00Z,pro,APAC,account_login,Could you add Google/Apple sign-in?,neutral,2,
+NovaSearch,fb_0010,email,2025-12-21T18:43:00Z,pro,EU,export_sharing,"Export works, but more formats would be useful.",neutral,3,
+NovaSearch,fb_0007,support_ticket,2025-12-23T21:56:00Z,new_user,NA,notifications,Notifications arrive late and aren’t useful.,negative,4,
+NovaSearch,fb_0055,discord,2025-12-23T22:04:00Z,enterprise,EU,ui_ux,The new UI is cluttered; I can’t find key actions.,negative,2,
+NovaSearch,fb_0073,twitter,2025-12-25T02:08:00Z,power_user,APAC,export_sharing,Export to PDF fails for large results.,negative,4,
+NovaSearch,fb_0056,twitter,2025-12-25T07:19:00Z,enterprise,EU,performance,The latest release feels much snappier.,positive,2,
+NovaSearch,fb_0027,google_play,2025-12-25T08:28:00Z,free_tier,EU,export_sharing,Sharing is simple and exports are well formatted.,positive,1,4.0
+NovaSearch,fb_0048,google_play,2025-12-25T13:41:00Z,new_user,EU,performance,Pages freeze when I scroll; it’s painful to use.,negative,2,3.0
+NovaSearch,fb_0074,twitter,2025-12-25T20:59:00Z,pro,NA,export_sharing,Export to PDF fails for large results.,negative,4,
+NovaSearch,fb_0021,app_store,2025-12-25T23:31:00Z,power_user,NA,ui_ux,Text is too small and contrast is low.,negative,5,2.0
+NovaSearch,fb_0080,twitter,2025-12-26T21:49:00Z,power_user,NA,privacy_security,App feels trustworthy and privacy controls are appreciated.,positive,1,
+NovaSearch,fb_0051,in_app_form,2025-12-27T00:46:00Z,power_user,NA,notifications,Notifications are helpful and timely.,positive,1,
+NovaSearch,fb_0063,support_ticket,2025-12-28T08:08:00Z,pro,NA,performance,Super fast — results show up instantly.,positive,2,
+NovaSearch,fb_0039,app_store,2025-12-28T12:04:00Z,enterprise,APAC,notifications,Too many notifications — it’s noisy.,negative,3,1.0
+NovaSearch,fb_0047,google_play,2025-12-28T21:29:00Z,new_user,EU,billing,Billing was seamless and the receipt came instantly.,positive,1,5.0
+NovaSearch,fb_0061,twitter,2025-12-28T21:33:00Z,new_user,EU,performance,"Performance is fine most of the time, but occasional slowdowns happen.",neutral,3,
+NovaSearch,fb_0067,in_app_form,2025-12-28T22:55:00Z,power_user,LATAM,search_relevance,Love the new ranking — results are much better for my use cases.,positive,2,
+NovaSearch,fb_0036,in_app_form,2025-12-29T02:27:00Z,power_user,APAC,billing,Billing was seamless and the receipt came instantly.,positive,1,
+NovaSearch,fb_0044,email,2025-12-30T13:17:00Z,new_user,EU,export_sharing,Sharing is simple and exports are well formatted.,positive,1,
+NovaSearch,fb_0065,support_ticket,2025-12-31T05:36:00Z,enterprise,APAC,performance,The latest release feels much snappier.,positive,1,
+NovaSearch,fb_0042,app_store,2025-12-31T10:35:00Z,enterprise,EU,performance,"Performance is fine most of the time, but occasional slowdowns happen.",neutral,1,1.0
+NovaSearch,fb_0004,twitter,2025-12-31T13:56:00Z,enterprise,LATAM,privacy_security,I can’t find clear privacy settings.,negative,4,
+NovaSearch,fb_0035,app_store,2025-12-31T22:01:00Z,new_user,EU,billing,Cancellation didn’t work and I’m still being billed.,negative,4,5.0
+NovaSearch,fb_0045,email,2026-01-01T10:20:00Z,free_tier,NA,notifications,"I turned notifications off, but they still show up.",negative,2,
+NovaSearch,fb_0023,support_ticket,2026-01-01T12:01:00Z,power_user,NA,search_relevance,Autocomplete saves me time and feels accurate.,positive,1,
+NovaSearch,fb_0012,discord,2026-01-01T16:19:00Z,enterprise,LATAM,privacy_security,I can’t find clear privacy settings.,negative,4,
+NovaSearch,fb_0058,app_store,2026-01-01T20:25:00Z,power_user,EU,performance,Super fast — results show up instantly.,positive,1,3.0
+NovaSearch,fb_0016,in_app_form,2026-01-02T00:51:00Z,free_tier,NA,onboarding,Onboarding is confusing — I don’t know what to do after sign-up.,negative,4,
+NovaSearch,fb_0028,email,2026-01-02T04:16:00Z,enterprise,EU,billing,Invoice email never arrived; I need it for reimbursement.,negative,4,
+NovaSearch,fb_0026,app_store,2026-01-02T16:14:00Z,pro,NA,privacy_security,App feels trustworthy and privacy controls are appreciated.,positive,1,2.0
+NovaSearch,fb_0079,support_ticket,2026-01-02T18:26:00Z,new_user,APAC,onboarding,Onboarding was smooth and helped me understand the app quickly.,positive,2,
+NovaSearch,fb_0015,app_store,2026-01-02T21:30:00Z,free_tier,LATAM,privacy_security,Privacy settings exist but could be easier to understand.,neutral,1,3.0
+NovaSearch,fb_0018,google_play,2026-01-03T00:14:00Z,enterprise,APAC,ui_ux,The new UI is cluttered; I can’t find key actions.,negative,2,1.0
+NovaSearch,fb_0043,discord,2026-01-03T07:42:00Z,enterprise,LATAM,privacy_security,Privacy settings exist but could be easier to understand.,neutral,2,
+NovaSearch,fb_0062,survey,2026-01-03T11:56:00Z,pro,EU,search_relevance,"Relevance varies by query; some topics work, others don't.",neutral,3,3.0
+NovaSearch,fb_0050,survey,2026-01-04T03:36:00Z,power_user,APAC,billing,Invoice email never arrived; I need it for reimbursement.,negative,5,1.0
+NovaSearch,fb_0049,twitter,2026-01-04T08:03:00Z,pro,NA,account_login,Could you add Google/Apple sign-in?,neutral,1,
+NovaSearch,fb_0006,app_store,2026-01-05T06:12:00Z,new_user,APAC,account_login,"Login works, but I'd like passkeys support.",neutral,2,3.0
+NovaSearch,fb_0002,app_store,2026-01-05T10:08:00Z,new_user,LATAM,ui_ux,"UI is fine, but a few screens feel busy.",neutral,2,3.0
+NovaSearch,fb_0077,in_app_form,2026-01-06T03:02:00Z,power_user,NA,pricing,Pricing is fair and the Pro plan is worth it for me.,positive,2,
+NovaSearch,fb_0068,twitter,2026-01-06T06:00:00Z,power_user,LATAM,search_relevance,Filters don't help; I still see irrelevant results.,negative,4,
+NovaSearch,fb_0013,support_ticket,2026-01-06T10:48:00Z,free_tier,NA,ui_ux,"UI is fine, but a few screens feel busy.",neutral,1,
+NovaSearch,fb_0014,support_ticket,2026-01-06T16:59:00Z,free_tier,APAC,performance,Super fast — results show up instantly.,positive,1,
+NovaSearch,fb_0019,survey,2026-01-07T09:46:00Z,enterprise,NA,account_login,2FA codes don’t get delivered sometimes.,negative,3,1.0
+NovaSearch,fb_0072,email,2026-01-07T21:50:00Z,pro,NA,billing,Cancellation didn’t work and I’m still being billed.,negative,2,
+NovaSearch,fb_0078,support_ticket,2026-01-08T01:31:00Z,power_user,LATAM,billing,I was charged twice for the same month — please fix.,negative,3,
+NovaSearch,fb_0024,discord,2026-01-08T03:26:00Z,free_tier,LATAM,billing,Billing was seamless and the receipt came instantly.,positive,2,
+NovaSearch,fb_0059,support_ticket,2026-01-08T04:37:00Z,pro,LATAM,pricing,Pricing is fair and the Pro plan is worth it for me.,positive,2,
+NovaSearch,fb_0031,google_play,2026-01-08T09:14:00Z,pro,APAC,export_sharing,"Export works, but more formats would be useful.",neutral,2,3.0
+NovaSearch,fb_0029,twitter,2026-01-08T09:18:00Z,new_user,EU,account_login,Login is quick and I like the biometric support.,positive,1,
+NovaSearch,fb_0060,twitter,2026-01-08T10:29:00Z,enterprise,EU,ui_ux,The new UI is cluttered; I can’t find key actions.,negative,3,
+NovaSearch,fb_0008,email,2026-01-08T13:36:00Z,free_tier,EU,billing,Invoice email never arrived; I need it for reimbursement.,negative,5,
+NovaSearch,fb_0038,survey,2026-01-08T13:47:00Z,power_user,LATAM,account_login,Password reset link expired immediately.,negative,3,5.0
+NovaSearch,fb_0009,google_play,2026-01-09T07:13:00Z,pro,LATAM,privacy_security,App feels trustworthy and privacy controls are appreciated.,positive,1,3.0
+NovaSearch,fb_0076,in_app_form,2026-01-09T11:14:00Z,new_user,NA,privacy_security,App feels trustworthy and privacy controls are appreciated.,positive,1,
+NovaSearch,fb_0057,google_play,2026-01-09T12:13:00Z,enterprise,LATAM,onboarding,Too many steps to get started; I almost gave up.,negative,3,5.0
+NovaSearch,fb_0033,email,2026-01-09T23:51:00Z,free_tier,NA,ui_ux,Dark mode colors look off and hurt readability.,negative,4,
+NovaSearch,fb_0054,email,2026-01-10T08:57:00Z,power_user,APAC,notifications,"I turned notifications off, but they still show up.",negative,4,
+NovaSearch,fb_0030,survey,2026-01-10T12:54:00Z,power_user,LATAM,notifications,Notifications are helpful and timely.,positive,2,3.0
+NovaSearch,fb_0064,email,2026-01-10T17:02:00Z,free_tier,LATAM,export_sharing,Export to PDF fails for large results.,negative,2,
+NovaSearch,fb_0017,twitter,2026-01-10T18:26:00Z,power_user,EU,billing,I was charged twice for the same month — please fix.,negative,4,
+NovaSearch,fb_0069,google_play,2026-01-11T03:12:00Z,power_user,LATAM,pricing,"Pricing seems reasonable, but I’d like an annual discount.",neutral,2,5.0
+NovaSearch,fb_0005,twitter,2026-01-11T06:16:00Z,pro,APAC,notifications,"I turned notifications off, but they still show up.",negative,4,
+NovaSearch,fb_0011,google_play,2026-01-11T11:29:00Z,enterprise,APAC,onboarding,Onboarding was smooth and helped me understand the app quickly.,positive,1,5.0
+NovaSearch,fb_0040,app_store,2026-01-13T06:43:00Z,enterprise,APAC,privacy_security,App feels trustworthy and privacy controls are appreciated.,positive,2,4.0
+NovaSearch,fb_0041,google_play,2026-01-13T11:39:00Z,enterprise,NA,pricing,Pricing is fair and the Pro plan is worth it for me.,positive,1,3.0
+NovaSearch,fb_0022,email,2026-01-13T16:08:00Z,power_user,EU,onboarding,Too many steps to get started; I almost gave up.,negative,4,
+NovaSearch,fb_0052,twitter,2026-01-13T22:38:00Z,free_tier,APAC,account_login,Password reset link expired immediately.,negative,3,
+NovaSearch,fb_0070,in_app_form,2026-01-13T23:57:00Z,new_user,NA,ui_ux,The new UI is cluttered; I can’t find key actions.,negative,3,
+NovaSearch,fb_0003,support_ticket,2026-01-14T02:34:00Z,power_user,NA,search_relevance,Search results feel off — I'm not getting what I typed.,negative,2,
+NovaSearch,fb_0032,survey,2026-01-15T04:04:00Z,free_tier,EU,export_sharing,I need CSV export but it’s missing.,negative,3,1.0
+NovaSearch,fb_0020,email,2026-01-15T14:53:00Z,pro,EU,account_login,Password reset link expired immediately.,negative,5,
+NovaSearch,fb_0001,support_ticket,2026-01-15T18:54:00Z,new_user,NA,notifications,"I turned notifications off, but they still show up.",negative,3,
+NovaSearch,fb_0034,twitter,2026-01-16T03:59:00Z,power_user,NA,billing,Billing was seamless and the receipt came instantly.,positive,1,
+NovaSearch,fb_0071,discord,2026-01-16T06:39:00Z,pro,NA,onboarding,A quick checklist would help new users.,neutral,2,
+NovaSearch,fb_0075,email,2026-01-17T03:48:00Z,free_tier,APAC,ui_ux,The UI looks clean and modern — great job.,positive,1,
+NovaSearch,fb_0037,app_store,2026-01-17T12:28:00Z,new_user,LATAM,notifications,"I turned notifications off, but they still show up.",negative,3,3.0
