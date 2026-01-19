@@ -13,7 +13,26 @@ database_id = "326bac91-d8af-4c02-a672-367757344164"
 [ai]
 binding = "AI"
 
+# Daily cron triggers (UTC)
+[triggers]
+crons = ["0 14 * * *"] # daily at 13:00 UTC
+
 # Environment variables
 [vars]
 MODEL_NAME = "@cf/meta/llama-3.1-8b-instruct"
+REPORT_FROM="noreply@mailchannels.net"
+REPORT_RECIPIENTS = "sameermemon@cmu.edu"
+REPORT_DEBUG_SECRET = "localsecret"
 # SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"  # Optional
+
+name = "nova-feedback-cron"
+main = "src/index.ts"
+compatibility_date = "2024-12-19"
+
+[triggers]
+crons = ["0 14 * * *"]
+
+[[services]]
+binding = "API"
+service = "nova-feedback-analysis"
+environment = "production"

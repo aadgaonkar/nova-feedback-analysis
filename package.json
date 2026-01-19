@@ -10,14 +10,19 @@
     "ingest:csv": "tsx scripts/ingest_csv.ts",
     "type-check": "tsc --noEmit"
   },
-  "keywords": ["cloudflare", "workers", "feedback", "ai"],
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "feedback",
+    "ai"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241218.0",
+    "@cloudflare/workers-types": "^4.20260118.0",
+    "@types/node": "^25.0.9",
+    "tsx": "^4.19.1",
     "typescript": "^5.6.3",
-    "wrangler": "^4.0.0",
-    "tsx": "^4.19.1"
-  },
-  "dependencies": {}
+    "wrangler": "^4.0.0"
+  }
 }

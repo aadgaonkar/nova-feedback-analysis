@@ -1,9 +1,17 @@
 import type { Env } from './types';
 import { handleCors, successResponse, errorResponse } from './services/response';
-import { insertFeedback, getPendingFeedback, getFeedbackById, insertAnalysis, getSummaryData, type FeedbackRaw } from './services/db';
+import {
+  insertFeedback,
+  getPendingFeedback,
+  getFeedbackById,
+  insertAnalysis,
+  getSummaryData,
+  type FeedbackRaw,
+} from './services/db';
 import { analyzeFeedback } from './services/ai';
 import { sendSlackDigest } from './services/slack';
 import { dashboardHTML } from './dashboard';
+import { sendEmailViaMailChannels } from './services/email';
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
@@ -24,8 +32,8 @@ export default {
 
       // POST /feedback - Ingest feedback
       if (path === '/feedback' && method === 'POST') {
-        const body = await request.json() as Partial<FeedbackRaw>;
-        
+        const body = (await request.json()) as Partial<FeedbackRaw>;
+
         if (!body.text || !body.source || !body.timestamp) {
           return errorResponse('Missing required fields: text, source, timestamp');
         }
@@ -36,7 +44,7 @@ export default {
 
       // POST /analyze - Analyze feedback
       if (path === '/analyze' && method === 'POST') {
-        const body = await request.json() as { mode?: string; id?: number; limit?: number };
+        const body = (await request.json()) as { mode?: string; id?: number; limit?: number };
         const modelName = env.MODEL_NAME || '@cf/meta/llama-3.1-8b-instruct';
 
         if (body.mode === 'pending') {
@@ -46,13 +54,13 @@ export default {
 
           for (const feedback of pending) {
             if (!feedback.id) continue;
-            
+
             const analysis = await analyzeFeedback(env.AI, modelName, feedback.text);
             const analysisId = await insertAnalysis(env.DB, {
               ...analysis,
               feedback_id: feedback.id,
             });
-            
+
             results.push({
               feedback_id: feedback.id,
               analysis_id: analysisId,
@@ -72,7 +80,7 @@ export default {
           const analysis = await analyzeFeedback(env.AI, modelName, feedback.text);
           const analysisId = await insertAnalysis(env.DB, {
             ...analysis,
-            feedback_id: feedback.id!,
+            feedback_id: feedback.id!, // TS-safe
           });
 
           return successResponse({
@@ -103,10 +111,83 @@ export default {
         return successResponse({ sent: success });
       }
 
+      // POST /debug/run-daily-report?secret=...
+      // (manual trigger for local dev)
+      if (path === '/debug/run-daily-report' && method === 'POST') {
+        const secret = url.searchParams.get('secret') || '';
+        if (!env.REPORT_DEBUG_SECRET || secret !== env.REPORT_DEBUG_SECRET) {
+          return errorResponse('Unauthorized', 401);
+        }
+
+        await runDailyEmail(env);
+        return successResponse({ ok: true });
+      }
+
       return errorResponse('Not found', 404);
     } catch (error) {
       console.error('Error:', error);
       return errorResponse(error instanceof Error ? error.message : 'Internal server error', 500);
     }
   },
+
+  async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
+    console.log('✅ Cron triggered:', event.cron);
+    ctx.waitUntil(runDailyEmail(env));
+  },
 };
+
+async function runDailyEmail(env: Env) {
+  console.log('🔥 runDailyEmail entered');
+
+  // These must exist (set in wrangler.toml or .dev.vars)
+  const apiKey = env.MAILCHANNELS_API_KEY;
+  const from = env.REPORT_FROM;
+  const recipients = env.REPORT_RECIPIENTS;
+
+  console.log('MAILCHANNELS_API_KEY present:', Boolean(apiKey), 'length:', apiKey?.length);
+  console.log('REPORT_FROM:', from);
+  console.log('REPORT_RECIPIENTS:', recipients);
+
+  if (!apiKey) {
+    console.error('❌ MAILCHANNELS_API_KEY missing');
+    return;
+  }
+  if (!from || !recipients) {
+    console.error('❌ REPORT_FROM or REPORT_RECIPIENTS missing');
+    return;
+  }
+
+  const summary = await getSummaryData(env.DB);
+  const date = new Date().toISOString().slice(0, 10);
+
+  const subject = `Daily Feedback Report — ${date}`;
+
+  const text = [
+    `Daily Feedback Report (${date})`,
+    ``,
+    `Total feedback: ${summary.totalCount}`,
+    ``,
+    `Sentiment breakdown:`,
+    `- Positive: ${summary.countsBySentiment.positive ?? 0}`,
+    `- Neutral: ${summary.countsBySentiment.neutral ?? 0}`,
+    `- Negative: ${summary.countsBySentiment.negative ?? 0}`,
+    ``,
+    `Top themes:`,
+    ...(summary.topThemes?.length
+      ? summary.topThemes.map((t) => `- ${t.theme} (${t.count})`)
+      : [`- (no themes yet)`]),
+  ].join('\n');
+
+  const result = await sendEmailViaMailChannels(apiKey, {
+    from: { email: from, name: 'Nova Reports' },
+    to: recipients.split(',').map((e) => ({ email: e.trim() })).filter((x) => x.email),
+    subject,
+    text,
+  });
+
+  if (!result.ok) {
+    console.error('❌ Daily report email failed', result);
+  } else {
+    console.log('✅ Daily report email sent');
+  }
+}

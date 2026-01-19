@@ -106,9 +106,9 @@ async function ingestCSV(apiUrl: string) {
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
+  const result: any = await response.json();
 
-      if (result.ok) {
+  if (result && result.ok) {
         successCount++;
         process.stdout.write('.');
       } else {
